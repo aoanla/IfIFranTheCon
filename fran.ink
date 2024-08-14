@@ -10,15 +10,11 @@ VAR frustration = 0
 
 
 == function WC(p) ==
-    { 
-    - p == undeterminate:
-        ~ return "0"
-    - p == c1990s:
-        ~ return "53"
-    - p == c2020s:
-        ~ return "82"
-    - p == c2050s:
-        ~ return "110"
+    { p:  
+    - undeterminate: 0
+    - c1990s: 53
+    - c2020s: 82
+    - c2050s: 110
     }
 
 == BEGIN == 
