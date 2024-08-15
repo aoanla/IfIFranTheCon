@@ -16,7 +16,7 @@ VAR fandom = Fandom.undeterminate
     - TimePeriod.undeterminate: 0
     - c1990s: 53
     - c2020s: 82
-    - c2050s: 110
+    - c2050s: 111
     }
     
 == function weak_SF(p) ==
