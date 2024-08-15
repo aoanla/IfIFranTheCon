@@ -97,17 +97,12 @@ Giving up your attempt to ignore the distraction, you:
 
 + lean over and pick up the receiver from the telephone on the sideboard
    ~ period = c1990s
-   -> HIRED
 + grab your cellphone from the sideboard, and thumb "accept"
    ~ period = c2020s
-   -> HIRED
 + open a FediNet port to the incoming request
    ~ period = c2050s
-   -> HIRED
 
-
-== HIRED ==
-
+-
 
 The {voice(period)} on the end of the line is {frustration > 1: excited| frustrated}.
 "Fran," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up!
@@ -118,16 +113,12 @@ As for you, your connection with SF&F is:
 
 + [just that {weak_SF(period)}] <i>weak</i>
  ~ fandom = weak
-  -> HIRED2
 + [a healthy appreciation of {average_SF(period)}] <i>healthy</i> 
  ~ fandom = average
- -> HIRED2
 + [extensive - you can name every {obsessive_SF(period)}] <i>extensive</i>
  ~ fandom = obsessive
- -> HIRED2 
  
- 
- == HIRED2 ==
+ -
  
  The {voice(period)} continues.
  "Well, in any case, the committee wanted to get the word out on {social_media(period)} and so they're looking for an expert.
