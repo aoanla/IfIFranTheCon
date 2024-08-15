@@ -65,33 +65,14 @@ VAR fandom = Fandom.undeterminate
 
 A loud ringing sound permeates the perfect silence, penetrating into the comforting warmth of sleep.
 
- * Answer It
-    -> Period
- * Ignore It and Try to Get to Sleep
-    -> Sleep
+- (sleep) 
+
+ + [Answer It]
+ + [Ignore It and Try to Get to Sleep]
+    ~ frustration += 1
+    {sleep < 3: -> sleep | -> Ring_Off }
     
-== Sleep ==
-
-The ringing sound continues, drilling deeper into the soft shell protecting you from the world outside. 
-
- + Answer It
-    -> Period
- +  Ignore It and Try to Get to Sleep
-   { Sleep < 3:  -> SleepWorkAround | -> Ring_Off }
-
-== SleepWorkAround ==
-
-//We need this because Ink is v silly and doesn't count "self-links" as incrementing the visit count
-~ frustration += 1
--> Sleep
-    
-== Ring_Off ==
-
-Finally, the infernal ringing stops, and you return to sleep.
-
-    -> END
-    
-== Period ==
+- 
 
 Giving up your attempt to ignore the distraction, you:
 
@@ -127,5 +108,12 @@ As for you, your connection with SF&F is:
  
  
  
+
+    -> END
+    
+    
+== Ring_Off ==
+
+Finally, the infernal ringing stops, and you return to sleep.
 
     -> END
