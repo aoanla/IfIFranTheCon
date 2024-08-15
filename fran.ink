@@ -3,10 +3,11 @@
 
 LIST Numbers = one, two, three, four, five
 LIST TimePeriod = undeterminate, c1990s, c2020s, c2050s
-LIST Fandom = undeterminate, weak, average, obsessive
+LIST Skills = undeterminate, weak, average, extensive
 VAR period = TimePeriod.undeterminate
 VAR frustration = 0
-VAR fandom = Fandom.undeterminate 
+VAR fandom = Skills.undeterminate 
+VAR experience = Skills.undeterminate
 
 -> BEGIN
 
@@ -58,8 +59,36 @@ VAR fandom = Fandom.undeterminate
     - c2050s: HyperNet
     }
 
+== function weak_exp(p) ==
+    {p:
+    - TimePeriod.undeterminate: «I'm sorry, I really don't have the time for this»
+    - c1990s: «I'm sorry, I really don't have the time for this»
+    - c2020s: «I'm sorry, I really don't have the time for this»
+    - c2050s: «I'm sorry, I really don't have the time for this»
+    }
+    
+== function average_exp(p) ==
+    {p:
+    - TimePeriod.undeterminate: «I'm sorry, I really don't have the time for this»
+    - c1990s: «I'm sorry, I really don't have the time for this»
+    - c2020s: «I'm sorry, I really don't have the time for this»
+    - c2050s: «I'm sorry, I really don't have the time for this»
+    }
+    
+== function extensive_exp(p) ==
+    {p:
+    - TimePeriod.undeterminate: «I'm sorry, I really don't have the time for this»
+    - c1990s: «I'm sorry, I really don't have the time for this»
+    - c2020s: «I'm sorry, I really don't have the time for this»
+    - c2050s: «I'm sorry, I really don't have the time for this»
+    }
 
 == BEGIN == 
+
+~ period = TimePeriod.undeterminate
+~ frustration = 0
+~ fandom = Skills.undeterminate 
+~ experience = Skills.undeterminate
 
 <b>If I Fran The Con</b>
 
@@ -97,7 +126,7 @@ As for you, your connection with SF&F is:
 + [a healthy appreciation of {average_SF(period)}] <i>healthy</i> 
  ~ fandom = average
 + [extensive - you can name every {obsessive_SF(period)}] <i>extensive</i>
- ~ fandom = obsessive
+ ~ fandom = extensive
  
  -
  
@@ -106,8 +135,16 @@ As for you, your connection with SF&F is:
  "I remembered that you'd been building a following, so I suggested your name and the committee jumped at the chance to get someone with your experience.
  "(I may have laid it on a little thick, but what are friends for?)"
  
- 
- 
+ + [Protest that you only have a little experience] {weak_exp(period)}
+  ~ experience = weak
+ + [Agree to do your best with your developing contacts list] {average_exp(period)}
+  ~ experience = average
+ + [Confidently assert that this is well within your skill set] {extensive_exp(period)}
+  ~ experience = extensive 
+ + [Refuse the Offer] «I'm sorry, I really don't have the time for this»
+    -> refused_the_call
+  
+ - 
 
     -> END
     
@@ -117,3 +154,26 @@ As for you, your connection with SF&F is:
 Finally, the infernal ringing stops, and you return to sleep.
 
     -> END
+
+
+== refused_the_call ==
+
+"Oh, sorry, Fran. I thought this would be a good thing for you, but if you're not interested, I'm sure the committee can manage by itself."
+
++ [Time Passes] 
+
+Despite their disappointment, your friend continues to give you updates on how the Con bid is going. There's some kind of ruckus about a catering contract offending some astronomy nerds, and it sounds like the special exhibitions aren't getting a lot of visibility, but somehow the bid is successful.
+
+-
+
++ [Time Passes]
+
+As the Con approaches, media interest builds. With only amateur experience in {social_media(period)}, the controversy about catering continues to dominate the conversation, even spilling into less specialist channels. 
+
+By the time the Con starts, a large fraction of fans have decided to boycott the whole event on the basis of ridiculous half-truths inflated by uncontrolled speculation. Others complain that they were unaware of a number of special guests that they are now missing an opportunity to meet...
+
+Things only get better, as an increasingly morose friend vents to you during the Con that every single issue that has come up has been fumbled in communication, and now people are demanding refunds.
+
+You wonder if things would have been better if you had said «yes».
+
+ -> BEGIN
