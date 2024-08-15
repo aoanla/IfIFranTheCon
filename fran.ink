@@ -109,7 +109,7 @@ Giving up your attempt to ignore the distraction, you:
    ~ period = c1990s
 + grab your cellphone from the sideboard, and thumb "accept"
    ~ period = c2020s
-+ open a FediNet port to the incoming request
++ open a NeuroWeb port to the incoming request
    ~ period = c2050s
 
 -
@@ -145,9 +145,63 @@ As for you, your connection with SF&F is:
     -> refused_the_call
   
  - 
+ 
+ "Fran, <>{experience: 
+ - weak: I know you don't think you're up for this, but think of this as a trial of fire
+ - average: I'm glad you said yes - and hopefully it'll be good for your CV too!
+ - extensive: I know, I know we're lucky to have you, seriously :p 
+ } 
+ "Anyway, I think we should start right away... here's some basic facts about our bid
+ "... and our opponents. 
+ "Can you try to create some buzz for us to maximise our visibility?"
+ 
+ - (iirtc_5101_node)
+ 
+ 
 
-    -> END
+-> END
+
+== iirtc_5101
+//Fran Frasier versus WAMO
+
+= BID
+
+//I think these should be like yields - each scenario yields to a random remaining one at the end of each stage
+//and the last one yields to a random new one to start going through the next stage
+
+= PLAN
+ 
+= ATCON
     
+-> END
+    
+== iirtc_5201 ==
+//NASA publicity
+
+
+-> END
+
+
+== iirtc_901 ==
+ //GoH publicity
+
+-> END
+
+
+== iirtc_5901 ==
+ //'Scithers' Award balloting and too much money and expectations
+
+-> END
+
+== iirtc_801 ==
+// Progress Report management
+
+-> END
+
+== iirtc_2001 == 
+//the big media premiere
+
+-> END
     
 == Ring_Off ==
 
