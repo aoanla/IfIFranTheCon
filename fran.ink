@@ -4,6 +4,8 @@
 LIST Numbers = one, two, three, four, five
 LIST TimePeriod = undeterminate, c1990s, c2020s, c2050s
 LIST Skills = undeterminate, weak, average, extensive
+LIST Scenarios = S_5101, S_5201, S_901, S_5901, S_801, S_2001
+LIST Phase = none, xBID, xPLAN, xATCON
 VAR period = TimePeriod.undeterminate
 //Fran Stats
 VAR frustration = 0
@@ -11,9 +13,32 @@ VAR fandom = Skills.undeterminate
 VAR experience = Skills.undeterminate
 //Mysterious reality breaking newgame+, ++ counter leading to the Eternal Franpion
 VAR dejavu = 0
-VAR callcnt = 0 
+VAR callcnt = 0
+VAR phase = none
+
+
+
 
 -> BEGIN
+
+== goto_l(sl)
+{ LIST_COUNT(sl):
+    - 0: -> BEGIN.dispatch
+    - else: 
+        ~ temp s = LIST_RANDOM(sl)
+        -> goto(s,sl - s)
+}
+        
+== goto(s, sl)
+{ s:
+- S_5101: -> iirtc_5101(sl)
+- S_5201: -> iirtc_5201(sl)
+- S_901:  -> iirtc_901(sl)
+- S_5901: -> iirtc_5901(sl)
+- S_801:  -> iirtc_801(sl)
+- S_2001: -> iirtc_2001(sl)
+}
+    
 
 == function dejaRAND(-> l) ==
 //where l is a list of 7 items (1-6 for die, plus 7 for dejavu
@@ -23,8 +48,6 @@ VAR callcnt = 0
     }
     ~ return l(dieroll)
     
-
-
 
 == function WC(p) ==
     { p:  
@@ -103,6 +126,7 @@ VAR callcnt = 0
 ~ frustration = 0
 ~ fandom = Skills.undeterminate 
 ~ experience = Skills.undeterminate
+~ phase = none
 
 <b>If I Fran The Con</b>
 
@@ -128,11 +152,11 @@ Giving up your attempt to ignore the distraction, you <>
     ~ dejavu += 1
     ~ callcnt += 1
     -> callpoint 
-+ lean over and pick up the receiver from the telephone on the sideboard
+* lean over and pick up the receiver from the telephone on the sideboard
    ~ period = c1990s
-+ grab your cellphone from the sideboard, and thumb "accept"
+* grab your cellphone from the sideboard, and thumb "accept"
    ~ period = c2020s
-+ <>open a NeuroWeb port to the incoming request
+* <>open a NeuroWeb port to the incoming request
    ~ period = c2050s
 
 -
@@ -156,11 +180,11 @@ The {voice(period)} on the end of the line is {frustration > 1: excited| frustra
 You do - they've not stopped going on about it since they got the position of "Ribbon Planner" on the committee, which they claim is a vital component of a successful event.
 As for you, your connection with SF&F is:
 
-+ [just that {weak_SF(period)}] <i>weak</i>
+* [just that {weak_SF(period)}] <i>weak</i>
  ~ fandom = weak
-+ [a healthy appreciation of {average_SF(period)}] <i>healthy</i> 
+* [a healthy appreciation of {average_SF(period)}] <i>healthy</i> 
  ~ fandom = average
-+ [extensive - you can name every {obsessive_SF(period)}] <i>extensive</i>
+* [extensive - you can name every {obsessive_SF(period)}] <i>extensive</i>
  ~ fandom = extensive
  
  -
@@ -170,11 +194,11 @@ As for you, your connection with SF&F is:
  "I remembered that you'd been building a following, so I suggested your name and the committee jumped at the chance to get someone with your experience.
  "(I may have laid it on a little thick, but what are friends for?)"
  
- + [Protest that you only have a little experience] {weak_exp(period)}
+ * [Protest that you only have a little experience] {weak_exp(period)}
   ~ experience = weak
- + [Agree to do your best with your developing contacts list] {average_exp(period)}
+ * [Agree to do your best with your developing contacts list] {average_exp(period)}
   ~ experience = average
- + [Confidently assert that this is well within your skill set] {extensive_exp(period)}
+ * [Confidently assert that this is well within your skill set] {extensive_exp(period)}
   ~ experience = extensive 
  + [Refuse the Offer] «I'm sorry, I really don't have the time for this»
     -> refused_the_call
@@ -190,56 +214,182 @@ As for you, your connection with SF&F is:
  "... and our opponents. 
  "Can you try to create some buzz for us to maximise our visibility?"
  
- - (iirtc_5101_node)
+ ~ phase = xBID
  
+ //select the set of scenarios for this time
+ ~ Scenarios = ()
+ ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - Scenarios)
+ ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - Scenarios)
  
+ -> goto(S_5101, Scenarios) 
+ 
+ //and jump to first one, which will be 5101
+ = dispatch 
+ 
+ { phase:
+ //we finished last phase
+ - xATCON: -> Epilogue
+ - else: 
+         ~ phase++
+         -> goto(S_5101, Scenarios) 
+ }
 
--> END
 
-== iirtc_5101
+== iirtc_5101(sl)
 //Fran Frasier versus WAMO
+= TRAMPOLINE(sl)
 
-= BID
+{phase:
+- xBID: -> BID(sl)
+- xPLAN: -> PLAN(sl)
+- xATCON: -> ATCON(sl)
+}
 
-//I think these should be like yields - each scenario yields to a random remaining one at the end of each stage
-//and the last one yields to a random new one to start going through the next stage
--> END
 
-= PLAN
+= BID(sl)
+
+We are in bid 5101
+
+-> goto_l(sl)
+
+= PLAN(sl)
  
- -> END
+ -> goto_l(sl)
  
-= ATCON
+= ATCON(sl)
 
--> END
+-> goto_l(sl)
     
-== iirtc_5201 ==
+== iirtc_5201(sl)  ==
 //NASA publicity
+= TRAMPOLINE(sl)
+
+{phase:
+- xBID: -> BID(sl)
+- xPLAN: -> PLAN(sl)
+- xATCON: -> ATCON(sl)
+}
 
 
--> END
+= BID(sl)
+
+We are in bid 5201
+
+-> goto_l(sl)
+
+= PLAN(sl)
+ 
+ -> goto_l(sl)
+ 
+= ATCON(sl)
+
+-> goto_l(sl)
 
 
-== iirtc_901 ==
+
+== iirtc_901(sl) ==
  //GoH publicity
+= TRAMPOLINE(sl)
 
--> END
+{phase:
+- xBID: -> BID(sl)
+- xPLAN: -> PLAN(sl)
+- xATCON: -> ATCON(sl)
+}
 
 
-== iirtc_5901 ==
+
+= BID(sl)
+
+We are in bid 901
+
+-> goto_l(sl)
+
+= PLAN(sl)
+ 
+ -> goto_l(sl)
+ 
+= ATCON(sl)
+
+-> goto_l(sl)
+
+
+== iirtc_5901(sl) ==
  //'Scithers' Award balloting and too much money and expectations
+= TRAMPOLINE(sl)
 
--> END
+{phase:
+- xBID: -> BID(sl)
+- xPLAN: -> PLAN(sl)
+- xATCON: -> ATCON(sl)
+}
 
-== iirtc_801 ==
+
+
+= BID(sl)
+
+We are in bid 5901
+
+-> goto_l(sl)
+
+= PLAN(sl)
+ 
+ -> goto_l(sl)
+ 
+= ATCON(sl)
+
+-> goto_l(sl)
+
+== iirtc_801(sl) ==
 // Progress Report management
+= TRAMPOLINE(sl)
 
--> END
+{phase:
+- xBID: -> BID(sl)
+- xPLAN: -> PLAN(sl)
+- xATCON: -> ATCON(sl)
+}
 
-== iirtc_2001 == 
+
+
+= BID(sl)
+
+We are in bid 801
+
+-> goto_l(sl)
+
+= PLAN(sl)
+ 
+ -> goto_l(sl)
+ 
+= ATCON(sl)
+
+-> goto_l(sl)
+
+== iirtc_2001(sl) == 
 //the big media premiere
+= TRAMPOLINE(sl)
 
--> END
+{phase:
+- xBID: -> BID(sl)
+- xPLAN: -> PLAN(sl)
+- xATCON: -> ATCON(sl)
+}
+
+
+= BID(sl)
+
+We are in bid 2001
+
+-> goto_l(sl)
+
+= PLAN(sl)
+ 
+ -> goto_l(sl)
+ 
+= ATCON(sl)
+
+-> goto_l(sl)
 
 //****************************************************************************************************************META
 
@@ -259,6 +409,13 @@ Finally, the infernal ringing stops, and you return to sleep.
     -> END
 
 
+== Epilogue ==
+
+The Con is over, your score is: 
+
+SCORE
+
+-> BEGIN 
 
 
 
