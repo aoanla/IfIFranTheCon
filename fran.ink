@@ -11,8 +11,19 @@ VAR fandom = Skills.undeterminate
 VAR experience = Skills.undeterminate
 //Mysterious reality breaking newgame+, ++ counter leading to the Eternal Franpion
 VAR dejavu = 0
+VAR callcnt = 0 
 
 -> BEGIN
+
+== function dejaRAND(-> l) ==
+//where l is a list of 7 items (1-6 for die, plus 7 for dejavu
+    ~ temp dieroll = RANDOM(2,7)
+    { dieroll <= dejavu: 
+        ~ dieroll = 1
+    }
+    ~ return l(dieroll)
+    
+
 
 
 == function WC(p) ==
@@ -96,30 +107,32 @@ VAR dejavu = 0
 <b>If I Fran The Con</b>
 
 A loud ringing sound permeates the perfect silence, penetrating into the comforting warmth of sleep.
+~ callcnt = 0
 
 - (sleep) 
 
  + [Answer It]
+  -> call
  + [Ignore It and Try to Get to Sleep]
     ~ frustration += 1
     {sleep < 3: -> sleep | -> Ring_Off }
     
 = call
 
-Giving up your attempt to ignore the distraction, you:
 
-{dejavu:  *\ {dejavu: 
-        - 1: have a strange feeling you've been here before
-        - other: somehow know this is about MetaCon 
-        }
+Giving up your attempt to ignore the distraction, you <>
+
+- (callpoint)
+
++ {dejavu} { not callcnt } \ <>{dejavu == 1: have a strange feeling you've been here before, but... | somehow know this is about MetaCon, and... }
     ~ dejavu += 1
-    -> call 
-    }
+    ~ callcnt += 1
+    -> callpoint 
 + lean over and pick up the receiver from the telephone on the sideboard
    ~ period = c1990s
 + grab your cellphone from the sideboard, and thumb "accept"
    ~ period = c2020s
-+ open a NeuroWeb port to the incoming request
++ <>open a NeuroWeb port to the incoming request
    ~ period = c2050s
 
 -
@@ -268,5 +281,9 @@ By the time the Con starts, a large fraction of fans have decided to boycott the
 Things only get better, as an increasingly morose friend vents to you during the Con that every single issue that has come up has been fumbled in communication, and now people are demanding refunds.
 
 You wonder if things would have been better if you had said «yes».
+    ~ dejavu += 1
 
- -> BEGIN
+ -> BEGIN 
+
+
+    
