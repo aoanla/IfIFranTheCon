@@ -5,9 +5,12 @@ LIST Numbers = one, two, three, four, five
 LIST TimePeriod = undeterminate, c1990s, c2020s, c2050s
 LIST Skills = undeterminate, weak, average, extensive
 VAR period = TimePeriod.undeterminate
+//Fran Stats
 VAR frustration = 0
 VAR fandom = Skills.undeterminate 
 VAR experience = Skills.undeterminate
+//Mysterious reality breaking newgame+, ++ counter leading to the Eternal Franpion
+VAR dejavu = 0
 
 -> BEGIN
 
@@ -101,10 +104,17 @@ A loud ringing sound permeates the perfect silence, penetrating into the comfort
     ~ frustration += 1
     {sleep < 3: -> sleep | -> Ring_Off }
     
-- 
+= call
 
 Giving up your attempt to ignore the distraction, you:
 
+{dejavu:  *\ {dejavu: 
+        - 1: have a strange feeling you've been here before
+        - other: somehow know this is about MetaCon 
+        }
+    ~ dejavu += 1
+    -> call 
+    }
 + lean over and pick up the receiver from the telephone on the sideboard
    ~ period = c1990s
 + grab your cellphone from the sideboard, and thumb "accept"
@@ -115,8 +125,20 @@ Giving up your attempt to ignore the distraction, you:
 -
 
 The {voice(period)} on the end of the line is {frustration > 1: excited| frustrated}.
-"Fran," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up!
-"You know I've been invited onto the bid committee for WorldCon {WC(period)}?"
+"Fran," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up! <>{dejavu > 2:"}
+
+{dejavu > 2: 
+    * «This is about MetaCon, isn't it?»
+        -> dejavu_track
+    * [Let Them Continue]
+        -> cont
+}
+
+-> cont
+
+= cont
+
+"You know I've been invited onto the bid committee for MetaCon {WC(period)}?"
 
 You do - they've not stopped going on about it since they got the position of "Ribbon Planner" on the committee, which they claim is a vital component of a successful event.
 As for you, your connection with SF&F is:
@@ -168,11 +190,14 @@ As for you, your connection with SF&F is:
 
 //I think these should be like yields - each scenario yields to a random remaining one at the end of each stage
 //and the last one yields to a random new one to start going through the next stage
+-> END
 
 = PLAN
  
+ -> END
+ 
 = ATCON
-    
+
 -> END
     
 == iirtc_5201 ==
@@ -202,12 +227,26 @@ As for you, your connection with SF&F is:
 //the big media premiere
 
 -> END
+
+//****************************************************************************************************************META
+
+== dejavu_track ==
+
+//freaky conversation 1
+
+-> END
+
+
+//****************************************************************************************************************ENDINGS
     
 == Ring_Off ==
 
 Finally, the infernal ringing stops, and you return to sleep.
 
     -> END
+
+
+
 
 
 == refused_the_call ==
