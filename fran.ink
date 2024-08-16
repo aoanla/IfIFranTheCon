@@ -93,7 +93,7 @@ The {voice(period)} on the end of the line is {frustration > 1: excited| frustra
 
 {dejavu > 2: 
     * «This is about MetaCon, isn't it?»
-        -> dejavu_track
+        -> dejavu_track -> cont
     * [Let Them Continue]
         -> cont
 }
@@ -168,9 +168,9 @@ As for you, your connection with SF&F is:
 
 == dejavu_track ==
 
-//freaky conversation 1
+//freaky conversation 1, for initial call
 
--> END
+->->
 
 
 //****************************************************************************************************************ENDINGS
