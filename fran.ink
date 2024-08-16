@@ -15,7 +15,8 @@ VAR experience = Skills.undeterminate
 VAR dejavu = 0
 VAR callcnt = 0
 VAR phase = none
-
+//Con stats
+VAR conscore = 10
 
 
 
@@ -262,15 +263,69 @@ As for you, your connection with SF&F is:
 
 = BID(sl)
 
-We are in bid 5101
+«Sure, send me over the packet and I'll get to work.»
+
+...
+
+A few hours later, you've familarised yourself with the info on MetaCon {WC(period)} bids. It looks like there's a few competitors to the bid you're supporting, some of which look to be actual serious rivals, but also that your bid has practically no {social_media(period)} presence at all...
+
+{dejavu > 2: Also, you weirdly hear a faint quacking from somewhere, despite there being no ducks around that you can see.}
+
+Do you:
+
+* Focus on building your bid's presence, going the extra mile and diverting effort from your other projects.
+* Put in a token effort to build reputation, but keep your powder dry for if the bid is successful.
+* Focus on destroying those serious competitors - no-one bests Fran Frasier!
+
+//Potential for choice 3 to divert to "kicked off" end choice, influenced by frustration
+
+- 
+
+//results
+
 
 -> goto_l(sl)
 
 = PLAN(sl)
+//5104 
+
+It's a success: your bid has succeeded in being Selected to host MetaCon {WC(period)}!
+This also means you're going to be even more busy handling all of the promotion for the event as it heads towards going live...
+
+//random chance we don't notice, based on experience
+ { LIST_RANDOM(Skills) > experience: 
+
+ This is a lot of work, but you don't notice anything particularly worrying on {social_media(period)}, so maybe everything will be okay.
+ //dejavu can rescue us here
+  { RANDOM(1,6) < dejavu:
+    However, there's something niggling in the back of your head, like you've been here before, so you check again... 
+    -> PLAN2(sl)
+    }
+ -> goto_l(sl) 
+ }
+ 
+ -> PLAN2(sl)
+ 
+ = PLAN2(sl)
+ //actually 5104, if you notice the WAMO
  
  -> goto_l(sl)
  
 = ATCON(sl)
+
+Well, you finally made it here - the venue is moved into, Hucksters are setting up their stalls, Programmes are printed and Registration is just about to open.
+Of course, this also means that you're handling a new and exciting set of questions about every tiny thing that the Committee didn't think of in advance...
+
+//if we didn't notice the QuackFest issue, then it blows up here
+{ not PLAN2: 
+<i>Fuck</i>, it looks like one of those things might be on <i>you</i>. Apparently you missed that some fringe org called "Writers Advocating for Moon Occupation" have a weird beef with the Catering company the Con contracted with, and they've been formenting dissent in some obscure corner of {social_media(period)} for <i>months</i>.
+It looks like several panellists and high-profile authors are sympathetic to the cause and have dropped out at the last minute, and registrations are being cancelled.
+    ~ frustration += 1
+    ~ conscore -= 2
+    -> goto_l(sl)
+}
+//otherwise, how did we do in dealing with WAMO?
+
 
 -> goto_l(sl)
     
