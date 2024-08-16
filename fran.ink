@@ -15,6 +15,7 @@ VAR threshold = 0
 VAR frustration = 0
 VAR fandom = Skills.undeterminate 
 VAR experience = Skills.undeterminate
+VAR energy = 10
 //Mysterious reality breaking newgame+, ++ counter leading to the Eternal Franpion
 VAR dejavu = 0
 VAR callcnt = 0
@@ -54,13 +55,13 @@ VAR conscore = 10
 
 //I don't need this yet, and I can't debug how to pass along the type "LIST"
 // for the argument (so Ink can tell that l(x) is the xth element of a list
-//== function dejaRAND(l) ==
+== function dejaRAND(l) ==
 //where l is a list of 7 items (1-6 for die, plus 7 for dejavu
-//    ~ temp dieroll = RANDOM_LIST(l)
-//    {  dieroll <= LIST_MIN(: 
-//        ~ dieroll = LIST_MIN(l)
-//    }
-//    ~ return l(dieroll)
+    ~ temp dieroll = LIST_RANDOM(l)
+    {  LIST_VALUE(dieroll) <= dejavu: 
+        ~ dieroll = LIST_MIN(l)
+    }
+    ~ return dieroll
     
 
 == function WC(p) ==
@@ -137,6 +138,14 @@ VAR conscore = 10
     - c2050s: «I'm sorry, I really don't have the time for this»
     }
 
+== function WAMOloc(p) == 
+    {p:
+    - TimePeriod.undeterminate: something eldritch #TODO
+    - c1990s: sci.space.moon.colony
+    - c2020s: an X tag \#GreenMoon
+    - c2050s: the hypernode tag \#MuskWorldColony
+    }
+
 == PRELUDE
 
 <b>If I Fran The Con</b>
@@ -156,7 +165,7 @@ VAR conscore = 10
 ~ experience = Skills.undeterminate
 ~ phase = none
 ~ threshold = 0
-
+~ energy = 10 
 
 
 A loud ringing sound permeates the perfect silence, penetrating into the comforting warmth of sleep.
@@ -290,9 +299,14 @@ A few hours later, you've familarised yourself with the info on MetaCon {WC(peri
 Do you:
 
 * Focus on building your bid's presence, going the extra mile and diverting effort from your other projects.
-* Put in a token effort to build reputation, but keep your powder dry for if the bid is successful.
+    ~ frustration -= 2
+    ~ energy -= 2
+    ~ conscore += 2
+* Put in a token effort to build reputation, but keep your powder dry for if the bid is successful
+    ~ frustration += 1
 * Focus on destroying those serious competitors - no-one bests Fran Frasier!
-
+    ~ frustration += 2
+    ~ conscore -= 2
 //Potential for choice 3 to divert to "kicked off" end choice, influenced by frustration
 
 - 
@@ -324,7 +338,16 @@ This also means you're going to be even more busy handling all of the promotion 
  
  = PLAN2(sl)
  //actually 5104, if you notice the WAMO
+ Hm, your attention is drawn to {WAMOloc(period)}, where there's some chatter from a group called WAMO mentioning MetaCon.
+ Apparently, the catering company we've hired - Luna Catering Company - have a signature moon pie with a green filling. WAMO - Writers Advocating {period == c2050s: against MuskWorld Oppression|Moon Occupation} - are concerned that Earth's primary satellite is being insulted by the scientific inaccuracy of this product, and are starting to make noise about it.
+ At this point, no-one serious seems to have noticed the noise, but it might be worth warning the committee to take action before it gets worse.
  
+ * Warn the Committee to release a statement
+ //experience determines how well the statement goes
+ * Ignore the fuss, it's not going to catch on
+ //this is the null result
+ 
+ -
  -> goto_l(sl)
  
 = ATCON(sl)
