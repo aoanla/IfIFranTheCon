@@ -62,7 +62,7 @@
 == function obsessive_SF(p) ==
     {p: 
     - TimePeriod.undeterminate: floople in the dread dimensions
-    - c1990s: character in 
+    - c1990s: character in #TODO
     - c2020s: in-joke in Lower Decks, citing series and episode.
     - c2050s: episode in the complete run of One Piece
     }
@@ -80,7 +80,7 @@
     - TimePeriod.undeterminate: palantir
     - c1990s: UseNet
     - c2020s: socials
-    - c2050s: HyperNet
+    - c2050s: HyperX
     }
 
 //TODO
@@ -113,7 +113,7 @@
 == function WAMOloc(p) == 
     {p:
     - TimePeriod.undeterminate: something eldritch #TODO
-    - c1990s: sci.space.moon.colony
+    - c1990s: alt.space.moon.colony
     - c2020s: an X tag \#GreenMoon
-    - c2050s: the hypernode tag \#MuskWorldColony
+    - c2050s: the hypernode tag \#MuskWorldLiberation
     }
