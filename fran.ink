@@ -1,4 +1,4 @@
-
+INCLUDE functions.ink
 
 // Note, the scenarios in the Discord game were 51xx obviously, 4xx, 10xx, 1xx, 54xx, 30xx, 24xx, 41xx, 16xx
 // At the moment, I've taken different scenarios from IIRTC that seemed to be social mediay
@@ -26,10 +26,7 @@ VAR conscore = 10
 
 
 
-
 -> PRELUDE
-
-INCLUDE functions.ink
 
 == PRELUDE
 
