@@ -19,7 +19,7 @@ VAR phase = none
 
 
 
--> BEGIN
+-> PRELUDE
 
 == goto_l(sl)
 { LIST_COUNT(sl):
@@ -96,6 +96,7 @@ VAR phase = none
     - c2050s: HyperNet
     }
 
+//TODO
 == function weak_exp(p) ==
     {p:
     - TimePeriod.undeterminate: «I'm sorry, I really don't have the time for this»
@@ -103,7 +104,8 @@ VAR phase = none
     - c2020s: «I'm sorry, I really don't have the time for this»
     - c2050s: «I'm sorry, I really don't have the time for this»
     }
-    
+
+//TODO
 == function average_exp(p) ==
     {p:
     - TimePeriod.undeterminate: «I'm sorry, I really don't have the time for this»
@@ -111,7 +113,8 @@ VAR phase = none
     - c2020s: «I'm sorry, I really don't have the time for this»
     - c2050s: «I'm sorry, I really don't have the time for this»
     }
-    
+
+//TODO
 == function extensive_exp(p) ==
     {p:
     - TimePeriod.undeterminate: «I'm sorry, I really don't have the time for this»
@@ -119,6 +122,17 @@ VAR phase = none
     - c2020s: «I'm sorry, I really don't have the time for this»
     - c2050s: «I'm sorry, I really don't have the time for this»
     }
+
+== PRELUDE
+
+<b>If I Fran The Con</b>
+<i>by Sam Skipsey, a f<s>r</s>angame for If I Ran the <s>Zoo</s>... Con, inspired by John Coxon's game for the WorldCon 82 / Glasgow 24 Discord, and written in Ink</i>
+
+&nbsp;
+<hr/>
+
+-> BEGIN
+
 
 == BEGIN == 
 
@@ -128,7 +142,7 @@ VAR phase = none
 ~ experience = Skills.undeterminate
 ~ phase = none
 
-<b>If I Fran The Con</b>
+
 
 A loud ringing sound permeates the perfect silence, penetrating into the comforting warmth of sleep.
 ~ callcnt = 0
