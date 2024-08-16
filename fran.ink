@@ -44,13 +44,15 @@ VAR conscore = 10
 }
     
 
-== function dejaRAND(-> l) ==
+//I don't need this yet, and I can't debug how to pass along the type "LIST"
+// for the argument (so Ink can tell that l(x) is the xth element of a list
+//== function dejaRAND(l) ==
 //where l is a list of 7 items (1-6 for die, plus 7 for dejavu
-    ~ temp dieroll = RANDOM(2,7)
-    { dieroll <= dejavu: 
-        ~ dieroll = 1
-    }
-    ~ return l(dieroll)
+//    ~ temp dieroll = RANDOM_LIST(l)
+//    {  dieroll <= LIST_MIN(: 
+//        ~ dieroll = LIST_MIN(l)
+//    }
+//    ~ return l(dieroll)
     
 
 == function WC(p) ==
