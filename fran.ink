@@ -10,6 +10,7 @@ LIST Skills = undeterminate, weak, average, extensive
 LIST Scenarios = S_5101, S_5201, S_5901, S_801, S_2001
 LIST Phase = none, xBID, xPLAN, xATCON
 VAR period = TimePeriod.undeterminate
+VAR threshold = 0
 //Fran Stats
 VAR frustration = 0
 VAR fandom = Skills.undeterminate 
@@ -25,7 +26,14 @@ VAR conscore = 10
 
 -> PRELUDE
 
+== fran_fired ==
+{frustration > threshold: -> FIRED}
+->->
+
+
 == goto_l(sl)
+//should have the "Fran Fired" check here before we go elsewhere
+//-> fran_fired -> 
 { LIST_COUNT(sl):
     - 0: -> BEGIN.dispatch
     - else: 
@@ -147,6 +155,7 @@ VAR conscore = 10
 ~ fandom = Skills.undeterminate 
 ~ experience = Skills.undeterminate
 ~ phase = none
+~ threshold = 0
 
 
 
@@ -235,6 +244,7 @@ As for you, your connection with SF&F is:
  "Can you try to create some buzz for us to maximise our visibility?"
  
  ~ phase = xBID
+ ~ threshold += 3
  
  //select the set of scenarios for this time
  ~ Scenarios = ()
@@ -251,6 +261,7 @@ As for you, your connection with SF&F is:
  - xATCON: -> Epilogue
  - else: 
          ~ phase++
+         ~ threshold += 3
          -> goto(S_5101, Scenarios) 
  }
 
@@ -466,6 +477,13 @@ It looks like several panellists and high-profile authors are sympathetic to the
 Finally, the infernal ringing stops, and you return to sleep.
 
     -> END
+
+== FIRED ==
+
+Your friend on the Con contacts you to pass on the bad news: despite all the work you've put in, the Committee feels that you've been more bad than good, and they're going to have to let you go.
+
+-> END
+
 
 
 == Epilogue ==
