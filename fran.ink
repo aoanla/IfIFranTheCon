@@ -27,7 +27,7 @@ VAR conscore = 10
 -> PRELUDE
 
 == fran_fired ==
-{frustration > threshold: -> FIRED}
+{frustration > threshold: ->-> FIRED}
 ->->
 
 
