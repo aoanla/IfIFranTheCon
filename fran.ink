@@ -4,7 +4,7 @@
 LIST Numbers = one, two, three, four, five
 LIST TimePeriod = undeterminate, c1990s, c2020s, c2050s
 LIST Skills = undeterminate, weak, average, extensive
-LIST Scenarios = S_5101, S_5201, S_901, S_5901, S_801, S_2001
+LIST Scenarios = S_5101, S_5201, S_5901, S_801, S_2001
 LIST Phase = none, xBID, xPLAN, xATCON
 VAR period = TimePeriod.undeterminate
 //Fran Stats
@@ -34,7 +34,7 @@ VAR conscore = 10
 { s:
 - S_5101: -> iirtc_5101(sl)
 - S_5201: -> iirtc_5201(sl)
-- S_901:  -> iirtc_901(sl)
+//- S_901:  -> iirtc_901(sl)
 - S_5901: -> iirtc_5901(sl)
 - S_801:  -> iirtc_801(sl)
 - S_2001: -> iirtc_2001(sl)
@@ -215,7 +215,7 @@ As for you, your connection with SF&F is:
   ~ experience = average
  * [Confidently assert that this is well within your skill set] {extensive_exp(period)}
   ~ experience = extensive 
- + [Refuse the Offer] «I'm sorry, I really don't have the time for this»
+ * [Refuse the Offer] «I'm sorry, I really don't have the time for this»
     -> refused_the_call
   
  - 
@@ -342,7 +342,11 @@ It looks like several panellists and high-profile authors are sympathetic to the
 
 = BID(sl)
 
-We are in bid 5201
+//intro text
+
+{dejavu > 2: Also, you weirdly hear a faint meowing from somewhere, despite there being no cats around that you can see.}
+
+//choice text
 
 -> goto_l(sl)
 
@@ -354,33 +358,6 @@ We are in bid 5201
 
 -> goto_l(sl)
 
-
-
-== iirtc_901(sl) ==
- //GoH publicity
-= TRAMPOLINE(sl)
-
-{phase:
-- xBID: -> BID(sl)
-- xPLAN: -> PLAN(sl)
-- xATCON: -> ATCON(sl)
-}
-
-
-
-= BID(sl)
-
-We are in bid 901
-
--> goto_l(sl)
-
-= PLAN(sl)
- 
- -> goto_l(sl)
- 
-= ATCON(sl)
-
--> goto_l(sl)
 
 
 == iirtc_5901(sl) ==
@@ -397,7 +374,11 @@ We are in bid 901
 
 = BID(sl)
 
-We are in bid 5901
+//intro text
+
+{dejavu > 2: Also, you weirdly hear a faint jingling from somewhere, like {period > c1990s: old-fashioned} coins dropping onto a hard surface.}
+
+//decision text
 
 -> goto_l(sl)
 
@@ -423,7 +404,9 @@ We are in bid 5901
 
 = BID(sl)
 
-We are in bid 801
+//There is no BID phase item for this one, so we *only* get the dejavu text here
+
+{dejavu > 2: You have a brief moment where you worry about how the Progress Reports will work, once we win the Bid. Then you decide you're getting ahead of yourself.}
 
 -> goto_l(sl)
 
@@ -448,7 +431,9 @@ We are in bid 801
 
 = BID(sl)
 
-We are in bid 2001
+//there is no BID phase item for this one, so we only get the dejavu text
+
+{dejavu > 2: You have a brief premonition that you should prepare in case a <i>really big</i> {period > c2020s: sense-exp | movie } studio decides to get involved; but you have no idea why you'd expect that...}
 
 -> goto_l(sl)
 
