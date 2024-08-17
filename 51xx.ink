@@ -93,30 +93,88 @@ It looks like several panellists and high-profile authors are sympathetic to the
 
 //we told the committee not to worry
 { SEENLOOP(->iirtc_5101.PLANRES1): 
- - 0: -> IGNORED ->
- - else: -> WARNED ->
- }
+     { 
+     - SEENLOOP(->iirtc_5101.NOT_RESOLVED): 
+        -> BOYCOTT ->
+     -  SEENLOOP(->iirtc_5101.RESOLVED):
+        -> QUIET ->
+        //or we dropped Luna Catering
+    - else:    However, before all of that, the Committee would like to talk to you about your advice to drop Luna Catering. It seems that the venue's strict catering rules mean that no other caterer could be found (despite, the Committee emphasises, significant unseemly grovelling that they were forced into by your actions), and so all the con-goers are having to go off-site to get food.
+        This is, they emphasise, a DISASTER.
+        ~ frustration += 6
+        ~ conscore -= 3
+    }
+}
 
-
+-    
 -> goto_l(sl)
 
 
 
 = PLANRES1 
 //result of Warning the Committee in a more readable place
-~ PLANRES1_v = 1
+ You let the committee know about the potential drama, and help them prepare a suitable set of statements.
+{ RANDOM(1,4) < LIST_VALUE(experience):
+    Whether due to your experience or not, the intervention seems to help calm people down - whilst WAMO are still mumbling in their own group, the wider world is satisfied.
+    Good job, Fran!
+    ~ conscore += 1
+    ~ frustration -= 2
+    ->->
+}
 
-    
+It doesn't seem to do a lot of good - in fact, making the statements seems to have just drawn attention to the developing drama! The discussion is now spreading across {social_media(period)} and threatens to blow up into something major.
+~frustration += 1
+~conscore -= 1
+Despite their decided unhappiness with this turn of events, the Committee would like you to handle this properly...
+
+* [Do Nothing] You advise the Committee that at this point, doing anything will just amplify matters further.
+    {RANDOM(1,6):
+    -1: You're right - only a day later, {social_media(period)} is distracted by an entirely different drama, and, whilst WAMO are still upset, the wider world has forgotten about them.
+        -> RESOLVED ->
+    -else: 
+        -> NOT_RESOLVED ->
+    }
+* [Flatter WAMO and make concessions] You work with the Committee to draft a suitably conciliatory statement to WAMO.
+    {RANDOM(1,3) < LIST_VALUE(experience):
+        You already know how to work with individuals obsessed with an obscure interest no-one else cares about by dealing with the Committee, so handing WAMO is a piece of cake. You flatter their concerns whilst carefully not making any strong commitments about significant change, and they eat it all up like one of those moon pies.
+        -> RESOLVED ->
+    - else: 
+       WAMO treat your concessions as just more validation of the rightness of their cause, and continue to make demands. 
+    -> NOT_RESOLVED ->
+    }
+* [Drop Luna Catering, despite them being the only approved caterer for the venue.] You advise the Committee that WAMO are clearly irrational, and the only thing that will sate them is dropping the offending caterer.
+    WAMO immediately declare victory, and luckily the parts of {social_media(period)} who were looking forward to those moon pies are not so rabid, so the entire thing dies down.
+-
+->->
+
+= RESOLVED
+    It looks like disaster (at least, <i>this</i> disaster) is averted!.
+    ~frustration -= 1
+->->
+
+= NOT_RESOLVED
+    It doesn't look like this one is going away before the Con...
+->->
+
+//situation was not resolved
+= BOYCOTT 
+{RANDOM(1,6):
+    - 1: Unfortunately, the calls for boycott from WAMO on {social_media(period)} have had more influence than you feared. Several high-profile authors joined the boycott, and took significant fen with them. The Con is still viable, but it's definitely wounded by this.
+        ~ frustration += 4
+        ~ conscore -= 2
+    - 2: -> B_COMMON ->->
+    - 3: -> B_COMMON ->->
+    - else: Luckily, the rating fire about Luna Catering on {social_media(period)} was limited entirely there. Anyone who was going to go to MetaCon seems to have been insufficiently interested in the debate to change their behaviour - attendance is as good as the Committee had planned for.
+}
 
 ->->
 
-//we told the ctte not to worry in PLAN
-= IGNORED 
-
+= B_COMMON 
+    The boycott calls from WAMO have been ignored by sensible people, but sadly not all con-goers are such people. Whilst attendance isn't significantly down, there is a bit of a negative feeling around the food trucks bringing the mood down overall.
+    ~conscore -= 1
 ->->
 
-
-//we released a statement in PLAN
-= WARNED
-
+//arguments nixed
+= QUIET
+    Thankfully, the drama about WAMO and the Luna Catering Company have stayed quiet since you dealt with them.
 ->->
