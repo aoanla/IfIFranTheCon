@@ -25,8 +25,7 @@
 }
     
 
-//I don't need this yet, and I can't debug how to pass along the type "LIST"
-// for the argument (so Ink can tell that l(x) is the xth element of a list
+//I don't need this yet
 == function dejaRAND(l) ==
 //where l is a list of 7 items (1-6 for die, plus 7 for dejavu
     ~ temp dieroll = LIST_RANDOM(l)
@@ -35,6 +34,11 @@
     }
     ~ return dieroll
     
+== function SEENLOOP(knot)
+
+~ return TURNS_SINCE(-> BEGIN) > TURNS_SINCE(knot)
+
+
 
 == function WC(p) ==
     { p:  

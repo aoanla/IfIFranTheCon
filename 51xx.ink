@@ -42,7 +42,6 @@ Do you:
 = PLAN(sl)
 //5104 
 
-VAR PLAN2_v = 0
 It's a success: your bid has succeeded in being Selected to host MetaCon {WC(period)}!
 This also means you're going to be even more busy handling all of the promotion for the event as it heads towards going live...
 
@@ -61,8 +60,6 @@ This also means you're going to be even more busy handling all of the promotion 
  -> PLAN2(sl)
  
  = PLAN2(sl)
- ~ PLAN2_v = 1
- VAR PLANRES1_v = 0 
  //actually 5104, if you notice the WAMO
  Hm, your attention is drawn to {WAMOloc(period)}, where there's some chatter from a group called WAMO mentioning MetaCon.
  Apparently, the catering company the venue insist on - Luna Catering Company - have a signature moon pie with a green filling. WAMO - Writers Advocating {period == c2050s: against Musksphere Oppression|for Moon Occupation} - are concerned that Earth's primary satellite is being insulted by the scientific inaccuracy of this product, and are starting to make noise about it.
@@ -85,7 +82,7 @@ Of course, this also means that you're handling a new and exciting set of questi
 
 //if we didn't notice the QuackFest issue, then it blows up here
 // LOGIC NOTE: I think i need to reset these visit counters if I am looping with dejavu... 
-{ not PLAN2_v: 
+{ not SEENLOOP(->iirtc_5101.PLAN2): 
 <i>Fuck</i>, it looks like one of those things might be on <i>you</i>. Apparently you missed that some fringe org called WAMO have a weird beef with the Catering company the Con contracted with, and they've been formenting dissent in some obscure corner of {social_media(period)} for <i>months</i>.
 It looks like several panellists and high-profile authors are sympathetic to the cause and have dropped out at the last minute, and registrations are being cancelled.
     ~ frustration += 9
@@ -95,7 +92,7 @@ It looks like several panellists and high-profile authors are sympathetic to the
 //otherwise, how did we do in dealing with WAMO?
 
 //we told the committee not to worry
-{ PLANRES1_v: 
+{ SEENLOOP(->iirtc_5101.PLANRES1): 
  - 0: -> IGNORED ->
  - else: -> WARNED ->
  }
