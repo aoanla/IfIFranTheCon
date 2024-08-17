@@ -89,9 +89,9 @@ Giving up your attempt to ignore the distraction, you <>
 -
 
 The {voice(period)} on the end of the line is {frustration > 1: excited| frustrated}.
-"Fran," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up! <>{dejavu > 2:"}
+"Fran," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up! <>{dejavu > 1:"}
 
-{dejavu > 2: 
+{dejavu > 1: 
     * «This is about MetaCon, isn't it?»
         -> dejavu_track -> cont
     * [Let Them Continue]
@@ -102,7 +102,7 @@ The {voice(period)} on the end of the line is {frustration > 1: excited| frustra
 
 = cont
 
-"You know I've been invited onto the bid committee for MetaCon {WC(period)}?"
+<>"You know I've been invited onto the bid committee for MetaCon {WC(period)}?"
 
 You do - they've not stopped going on about it since they got the position of "Ribbon Planner" on the committee, which they claim is a vital component of a successful event.
 As for you, your connection with SF&F is:
@@ -169,6 +169,22 @@ As for you, your connection with SF&F is:
 == dejavu_track ==
 
 //freaky conversation 1, for initial call
+The {voice(period)} seems a little flustered.
+"Um, how did you guess? Have I been talking about it too much already?"
+
+* [Lean into their fluster]«You <i>have</i> been going on about it every time we {speak(period)}...»
+    ~ frustration += 1 //being called out is *always annoying
+    "Oh, have I? Well, it <i>is</i> a big part of my life at the moment, given how much of an opportunity it is!"
+* [Minimise]«Oh, nothing, just a random guess!»
+    "Huh, okay...
+* [Admit to Deja Vu]«Actually, I had a weird feeling just before that I've had this conversation before...»
+    {frustration: frustration += 1}  //makes you sound like a weirdo if already annoying
+    ~ dejavu += 1 //opens you to weirdness in turn
+    A note of concern seeps in.
+    "Hmm, have you been getting enough sleep?
+- 
+
+"Anyway...
 
 ->->
 

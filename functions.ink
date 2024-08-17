@@ -75,6 +75,14 @@
     - c2050s: impression-stream
     }
     
+== function speak(p) ==
+    {p: 
+    - TimePeriod.undeterminate: mind-speak
+    - c1990s: talk 
+    - c2020s: talk
+    - c2050s: link
+    }
+    
 == function social_media(p) ==
     {p:
     - TimePeriod.undeterminate: palantir
