@@ -46,7 +46,7 @@
     
 == function weak_SF(p) ==
     {p: 
-    - TimePeriod.undeterminate: a strange blank
+    - TimePeriod.undeterminate: a strange blank #TODO
     - c1990s: you thought Winona Ryder and Keanu Reeves were hot in Dracula
     - c2020s: you saw some of the Marvel movies
     - c2050s: you simmed a movie about a world with frozen water at the poles once
@@ -95,8 +95,8 @@
 == function weak_exp(p) ==
     {p:
     - TimePeriod.undeterminate: «I'm sorry, I really don't have the time for this»
-    - c1990s: «I'm sorry, I really don't have the time for this»
-    - c2020s: «I'm sorry, I really don't have the time for this»
+    - c1990s: «I guess I've posted on UseNet before... I can have a go»
+    - c2020s: «» #TODO
     - c2050s: «I'm sorry, I really don't have the time for this»
     }
 
@@ -112,10 +112,10 @@
 //TODO
 == function extensive_exp(p) ==
     {p:
-    - TimePeriod.undeterminate: «I'm sorry, I really don't have the time for this»
-    - c1990s: «I'm sorry, I really don't have the time for this»
-    - c2020s: «I'm sorry, I really don't have the time for this»
-    - c2050s: «I'm sorry, I really don't have the time for this»
+    - TimePeriod.undeterminate: «Hastur subscribes to my newsletter, I can handle this»
+    - c1990s: «I run my own IRC server and webmistress a webring, this won't be a problem»
+    - c2020s: «I've even got my own OnlyFrans (it's doing very well thank you), getting the word out on this will be a peace of cake, if I have the time»
+    - c2050s: «They're even following my sense-casts on the Musksphere, handling this will be easy»
     }
 
 == function WAMOloc(p) == 
