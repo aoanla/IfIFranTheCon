@@ -66,8 +66,8 @@ This also means you're going to be even more busy handling all of the promotion 
  At this point, no-one serious seems to have noticed the noise, but it might be worth warning the committee to take action before it gets worse.
  
  * Warn the Committee to release a statement
- //experience determines how well the statement goes
- -> PLANRES1 -> 
+    //experience determines how well the statement goes
+    -> PLANRES1 -> 
  * [Ignore the fuss, it's not going to catch on] You tell the committee that there's some weirdos called WAMO agitating, but that they can be safely ignored. At least this frees up more time for promotion!
  
  //this is the null result
@@ -81,6 +81,7 @@ Well, you finally made it here - the venue is moved into, Hucksters are setting 
 Of course, this also means that you're handling a new and exciting set of questions about every tiny thing that the Committee didn't think of in advance...
 
 //if we didn't notice the QuackFest issue, then it blows up here
+// LOGIC NOTE: I think i need to reset these visit counters if I am looping with dejavu... 
 { not PLAN2: 
 <i>Fuck</i>, it looks like one of those things might be on <i>you</i>. Apparently you missed that some fringe org called WAMO have a weird beef with the Catering company the Con contracted with, and they've been formenting dissent in some obscure corner of {social_media(period)} for <i>months</i>.
 It looks like several panellists and high-profile authors are sympathetic to the cause and have dropped out at the last minute, and registrations are being cancelled.
@@ -91,9 +92,10 @@ It looks like several panellists and high-profile authors are sympathetic to the
 //otherwise, how did we do in dealing with WAMO?
 
 //we told the committee not to worry
-{ not PLANRES1:
-    stuff
-}
+{ PLANRES1: 
+ - 0: -> IGNORED ->
+ - else: -> WARNED ->
+ }
 
 
 -> goto_l(sl)
@@ -102,6 +104,19 @@ It looks like several panellists and high-profile authors are sympathetic to the
 
 = PLANRES1 
 //result of Warning the Committee in a more readable place
+
+
     
+
+->->
+
+//we told the ctte not to worry in PLAN
+= IGNORED 
+
+->->
+
+
+//we released a statement in PLAN
+= WARNED
 
 ->->
