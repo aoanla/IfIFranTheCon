@@ -159,7 +159,7 @@ As for you, your connection with SF&F is:
  - xATCON: -> Epilogue
  - else: 
          ~ phase++
-         ~ threshold += 3
+         ~ threshold = 3*threshold
          -> goto(S_5101, Scenarios) 
  }
 
@@ -185,7 +185,9 @@ Finally, the infernal ringing stops, and you return to sleep.
 
 Your friend on the Con contacts you to pass on the bad news: despite all the work you've put in, the Committee feels that you've been more bad than good, and they're going to have to let you go.
 
--> END
+~ dejavu += 1
+
+-> BEGIN
 
 
 
@@ -195,6 +197,8 @@ The Con is over, your score is:
 
 SCORE
 
+~ dejavu += 1
+
 -> BEGIN 
 
 
@@ -202,6 +206,7 @@ SCORE
 == refused_the_call ==
 
 "Oh, sorry, Fran. I thought this would be a good thing for you, but if you're not interested, I'm sure the committee can manage by itself."
+The voice hangs up.
 
 + [Time Passes] 
 
