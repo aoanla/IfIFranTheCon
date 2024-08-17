@@ -122,6 +122,6 @@
     {p:
     - TimePeriod.undeterminate: something eldritch #TODO
     - c1990s: alt.space.moon.colony
-    - c2020s: an X tag \#GreenMoon
-    - c2050s: the hypernode tag \#MuskWorldLiberation
+    - c2020s: \#GreenMoon
+    - c2050s: \#\#MuskWorldLiberation
     }
