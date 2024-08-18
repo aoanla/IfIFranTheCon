@@ -21,7 +21,7 @@ A few hours later, you've familarised yourself with the info on MetaCon {WC(peri
 
 Do you:
 
-* Focus on building your bid's presence, going the extra mile and diverting effort from your other projects.
+* { energy > 1 } Focus on building your bid's presence, going the extra mile and diverting effort from your other projects.
     ~ frustration -= 2
     ~ energy -= 2
     ~ conscore += 2
@@ -95,9 +95,9 @@ It looks like several panellists and high-profile authors are sympathetic to the
 { SEENLOOP(->iirtc_5101.PLANRES1): 
      { 
      - SEENLOOP(->iirtc_5101.NOT_RESOLVED): 
-        -> BOYCOTT ->
+        <- BOYCOTT
      -  SEENLOOP(->iirtc_5101.RESOLVED):
-        -> QUIET ->
+        <- QUIET 
         //or we dropped Luna Catering
     - else:    However, before all of that, the Committee would like to talk to you about your advice to drop Luna Catering. It seems that the venue's strict catering rules mean that no other caterer could be found (despite, the Committee emphasises, significant unseemly grovelling that they were forced into by your actions), and so all the con-goers are having to go off-site to get food.
         This is, they emphasise, a DISASTER.
@@ -166,8 +166,7 @@ Despite their decided unhappiness with this turn of events, the Committee would 
     - 3: -> B_COMMON ->->
     - else: Luckily, the rating fire about Luna Catering on {social_media(period)} was limited entirely there. Anyone who was going to go to MetaCon seems to have been insufficiently interested in the debate to change their behaviour - attendance is as good as the Committee had planned for.
 }
-
-->->
+//I don't understand why this doesn't need a -> DONE as a thread...
 
 = B_COMMON 
     The boycott calls from WAMO have been ignored by sensible people, but sadly not all con-goers are such people. Whilst attendance isn't significantly down, there is a bit of a negative feeling around the food trucks bringing the mood down overall.
@@ -177,4 +176,4 @@ Despite their decided unhappiness with this turn of events, the Committee would 
 //arguments nixed
 = QUIET
     Thankfully, the drama about WAMO and the Luna Catering Company have stayed quiet since you dealt with them.
-->->
+-> DONE //because this is a thread?
