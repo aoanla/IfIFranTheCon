@@ -22,7 +22,7 @@ VAR callcnt = 0
 VAR phase = none
 //Con stats
 VAR conscore = 10
-
+VAR sleep_v = 0
 
 
 -> PRELUDE
@@ -55,6 +55,7 @@ INCLUDE 20xx.ink
 ~ phase = none
 ~ threshold = 0
 ~ energy = 10 
+~ sleep_v = 0
 
 
 A loud ringing sound permeates the perfect silence, penetrating into the comforting warmth of sleep.
@@ -66,7 +67,8 @@ A loud ringing sound permeates the perfect silence, penetrating into the comfort
   -> call
  + [Ignore It and Try to Get to Sleep]
     ~ frustration += 1
-    {sleep < 3: -> sleep | -> Ring_Off }
+    ~ sleep_v += 1
+    {sleep_v < 3: -> sleep | -> Ring_Off }
     
 = call
 
@@ -79,39 +81,38 @@ Giving up your attempt to ignore the distraction, you <>
     ~ dejavu += 1
     ~ callcnt += 1
     -> callpoint 
-* lean over and pick up the receiver from the telephone on the sideboard
++ lean over and pick up the receiver from the telephone on the sideboard
    ~ period = c1990s
-* grab your cellphone from the sideboard, and thumb "accept"
++ grab your cellphone from the sideboard, and thumb "accept"
    ~ period = c2020s
-* <>open a NeuroWeb port to the incoming request
++ <>open a NeuroWeb port to the incoming request
    ~ period = c2050s
 
 -
 
 The {voice(period)} on the end of the line is {frustration > 1: excited| frustrated}.
-"Fran," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up! <>{dejavu > 1:"}
+"Fran," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up! {dejavu > 1:"}
 
-{dejavu > 1: 
-    * «This is about MetaCon, isn't it?»
+    + {dejavu > 1}  «This is about MetaCon, isn't it?»
         -> dejavu_track -> cont
-    * [Let Them Continue]
+    + [Let Them Continue]
         -> cont
-}
+    
 
 -> cont
 
 = cont
 
-<>"You know I've been invited onto the bid committee for MetaCon {WC(period)}?"
+"You know I've been invited onto the bid committee for MetaCon {WC(period)}?"
 
 You do - they've not stopped going on about it since they got the position of "Ribbon Planner" on the committee, which they claim is a vital component of a successful event.
 As for you, your connection with SF&F is:
 
-* [just that {weak_SF(period)}] <i>weak</i>
++ [just that {weak_SF(period)}] <i>weak</i>
  ~ fandom = weak
-* [a healthy appreciation of {average_SF(period)}] <i>healthy</i> 
++ [a healthy appreciation of {average_SF(period)}] <i>healthy</i> 
  ~ fandom = average
-* [extensive - you can name every {obsessive_SF(period)}] <i>extensive</i>
++ [extensive - you can name every {obsessive_SF(period)}] <i>extensive</i>
  ~ fandom = extensive
  
  -
@@ -121,13 +122,13 @@ As for you, your connection with SF&F is:
  "I remembered that you'd been building a following, so I suggested your name and the committee jumped at the chance to get someone with your experience.
  "(I may have laid it on a little thick, but what are friends for?)"
  
- * [Protest that you only have a little experience] {weak_exp(period)}
+ + [Protest that you only have a little experience] {weak_exp(period)}
   ~ experience = weak
- * [Agree to do your best with your developing contacts list] {average_exp(period)}
+ + [Agree to do your best with your developing contacts list] {average_exp(period)}
   ~ experience = average
- * [Confidently assert that this is well within your skill set] {extensive_exp(period)}
+ + [Confidently assert that this is well within your skill set] {extensive_exp(period)}
   ~ experience = extensive 
- * [Refuse the Offer] «I'm sorry, I really don't have the time for this»
+ + [Refuse the Offer] «I'm sorry, I really don't have the time for this»
     -> refused_the_call
   
  - 
@@ -173,12 +174,12 @@ As for you, your connection with SF&F is:
 The {voice(period)} seems a little flustered.
 "Um, how did you guess? Have I been talking about it too much already?"
 
-* [Lean into their fluster]«You <i>have</i> been going on about it every time we {speak(period)}...»
++ [Lean into their fluster]«You <i>have</i> been going on about it every time we {speak(period)}...»
     ~ frustration += 1 //being called out is *always annoying
     "Oh, have I? Well, it <i>is</i> a big part of my life at the moment, given how much of an opportunity it is!"
-* [Minimise]«Oh, nothing, just a random guess!»
++ [Minimise]«Oh, nothing, just a random guess!»
     "Huh, okay...
-* [Admit to Deja Vu]«Actually, I had a weird feeling just before that I've had this conversation before...»
++ [Admit to Deja Vu]«Actually, I had a weird feeling just before that I've had this conversation before...»
     {frustration: 
         ~frustration += 1
     }  //makes you sound like a weirdo if already slightly annoying

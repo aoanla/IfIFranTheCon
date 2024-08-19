@@ -20,13 +20,13 @@ A few hours later, you've familarised yourself with the info on MetaCon {WC(peri
 
 Do you:
 
-* { energy > 1 } Focus on building your bid's presence, going the extra mile and diverting effort from your other projects.
++ { energy > 1 } Focus on building your bid's presence, going the extra mile and diverting effort from your other projects.
     ~ frustration -= 2
     ~ energy -= 2
     ~ conscore += 2
-* Put in a token effort to build reputation, but keep your powder dry for if the bid is successful
++ Put in a token effort to build reputation, but keep your powder dry for if the bid is successful
     ~ frustration += 1
-* Focus on destroying those serious competitors - no-one bests Fran Frasier!
++ Focus on destroying those serious competitors - no-one bests Fran Frasier!
     ~ frustration += 2
     ~ conscore -= 2
 //Potential for choice 3 to divert to "kicked off" end choice, influenced by frustration
@@ -64,10 +64,10 @@ This also means you're going to be even more busy handling all of the promotion 
  Apparently, the catering company the venue insist on - Luna Catering Company - have a signature moon pie with a green filling. WAMO - Writers Advocating {period == c2050s: against Musksphere Oppression|for Moon Occupation} - are concerned that Earth's primary satellite is being insulted by the scientific inaccuracy of this product, and are starting to make noise about it.
  At this point, no-one serious seems to have noticed the noise, but it might be worth warning the committee to take action before it gets worse.
  
- * Warn the Committee to release a statement
+ + Warn the Committee to release a statement
     //experience determines how well the statement goes
     -> PLANRES1 -> 
- * [Ignore the fuss, it's not going to catch on] You tell the committee that there's some weirdos called WAMO agitating, but that they can be safely ignored. At least this frees up more time for promotion!
+ + [Ignore the fuss, it's not going to catch on] You tell the committee that there's some weirdos called WAMO agitating, but that they can be safely ignored. At least this frees up more time for promotion!
  
  //this is the null result
 
@@ -126,14 +126,14 @@ It doesn't seem to do a lot of good - in fact, making the statements seems to ha
 ~conscore -= 1
 Despite their decided unhappiness with this turn of events, the Committee would like you to handle this properly...
 
-* [Do Nothing] You advise the Committee that at this point, doing anything will just amplify matters further.
++ [Do Nothing] You advise the Committee that at this point, doing anything will just amplify matters further.
     {RANDOM(1,6):
     -1: You're right - only a day later, {social_media(period)} is distracted by an entirely different drama, and, whilst WAMO are still upset, the wider world has forgotten about them.
         -> RESOLVED ->
     -else: 
         -> NOT_RESOLVED ->
     }
-* [Flatter WAMO and make concessions] You work with the Committee to draft a suitably conciliatory statement to WAMO.
++ [Flatter WAMO and make concessions] You work with the Committee to draft a suitably conciliatory statement to WAMO.
     {RANDOM(1,3) < LIST_VALUE(experience):
         You already know how to work with individuals obsessed with an obscure interest no-one else cares about by dealing with the Committee, so handing WAMO is a piece of cake. You flatter their concerns whilst carefully not making any strong commitments about significant change, and they eat it all up like one of those moon pies.
         -> RESOLVED ->
@@ -141,7 +141,7 @@ Despite their decided unhappiness with this turn of events, the Committee would 
        WAMO treat your concessions as just more validation of the rightness of their cause, and continue to make demands. 
     -> NOT_RESOLVED ->
     }
-* [Drop Luna Catering, despite them being the only approved caterer for the venue.] You advise the Committee that WAMO are clearly irrational, and the only thing that will sate them is dropping the offending caterer.
++ [Drop Luna Catering, despite them being the only approved caterer for the venue.] You advise the Committee that WAMO are clearly irrational, and the only thing that will sate them is dropping the offending caterer.
     WAMO immediately declare victory, and luckily the parts of {social_media(period)} who were looking forward to those moon pies are not so rabid, so the entire thing dies down.
 -
 ->->
