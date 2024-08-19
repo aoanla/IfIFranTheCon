@@ -178,7 +178,9 @@ The {voice(period)} seems a little flustered.
 * [Minimise]«Oh, nothing, just a random guess!»
     "Huh, okay...
 * [Admit to Deja Vu]«Actually, I had a weird feeling just before that I've had this conversation before...»
-    {frustration: frustration += 1}  //makes you sound like a weirdo if already annoying
+    {frustration: 
+        ~frustration += 1
+    }  //makes you sound like a weirdo if already slightly annoying
     ~ dejavu += 1 //opens you to weirdness in turn
     A note of concern seeps in.
     "Hmm, have you been getting enough sleep?
