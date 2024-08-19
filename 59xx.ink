@@ -1,7 +1,7 @@
 == iirtc_5901(sl) ==
  //'Scithers' Award balloting and too much money and expectations
  //... I really have to use this one given the Moorcock reference, although Fran's perspective is rather different to the scenario the Committee sees.
-= TRAMPOLINE(sl)
+//TRAMPOLINE(sl)
 
 {phase:
 - xBID: -> BID(sl)

@@ -1,6 +1,6 @@
 == iirtc_5201(sl)  ==
 //NASA publicity
-= TRAMPOLINE(sl)
+//TRAMPOLINE(sl)
 
 {phase:
 - xBID: -> BID(sl)

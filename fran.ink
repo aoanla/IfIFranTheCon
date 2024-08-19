@@ -140,15 +140,16 @@ As for you, your connection with SF&F is:
  "Anyway, I think we should start right away... here's some basic facts about our bid
  "... and our opponents. 
  "Can you try to create some buzz for us to maximise our visibility?"
- 
+
  ~ phase = xBID
  ~ threshold += 3
+ 
  
  //select the set of scenarios for this time
  ~ Scenarios = ()
  ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - Scenarios)
  ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - Scenarios)
- 
+  
  -> goto(S_5101, Scenarios) 
  
  //and jump to first one, which will be 5101

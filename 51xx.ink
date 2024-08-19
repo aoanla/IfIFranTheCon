@@ -1,7 +1,6 @@
 == iirtc_5101(sl)
 //Fran Frasier versus WAMO
-= TRAMPOLINE(sl)
-
+//TRAMPOLINE
 {phase:
 - xBID: -> BID(sl)
 - xPLAN: -> PLAN(sl)
