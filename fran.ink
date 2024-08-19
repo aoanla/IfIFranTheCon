@@ -148,8 +148,10 @@ As for you, your connection with SF&F is:
  
  //select the set of scenarios for this time
  ~ Scenarios = ()
- ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - Scenarios)
- ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - Scenarios)
+ ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - S_5101 - Scenarios)
+ ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - S_5101 - Scenarios)
+ 
+ {Scenarios}
   
  -> goto(S_5101, Scenarios) 
  
