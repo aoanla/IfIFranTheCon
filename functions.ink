@@ -48,6 +48,22 @@
     - c2050s: 111
     }
     
+== function phonecall(p) == 
+{ p:
+    - TimePeriod.undeterminate: astral sending
+    - c1990s: phone call
+    - c2020s: text
+    - c2050s: sim-stream
+}
+
+== function mensrights(p) == 
+{ p:
+    - TimePeriod.undeterminate: elf justice
+    - c1990s: traditional marriage
+    - c2020s: mens' rights
+    - c2050s: physical sapients
+}    
+    
 == function weak_SF(p) ==
     {p: 
     - TimePeriod.undeterminate: a strange blank #TODO
