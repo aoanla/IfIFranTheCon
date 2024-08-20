@@ -33,9 +33,7 @@ Do you:
     ~ frustration += 1
     You manage to keep the bid visible with relatively little work - and as a bonus, you don't have to prioritise this over anything else you're doing. However, the Committee seem a bit disappointed by the results.
 + [Focus on destroying those serious competitors - no-one bests {franfrasier(period)}!]
-    ~ frustration += 2
-    ~ conscore -= 2
-    Rumours spread around the world before truth gets on its shoes, so you easily manage to start spreading discord and misinformation about your competing bids. However, it's not long before people spot that you're clearly agitating on behalf of the one side you never mention... and <i>then</i> the backlash against the Lanark bid does far more damage to it than you have done to the others.
+    -> aggressive ->
 //Potential for choice 3 to divert to "kicked off" end choice, influenced by frustration
 
 - 
@@ -44,6 +42,16 @@ Do you:
 
 
 -> goto_l(sl)
+
+//the aggressive option above so we can test for it in other social media contexts
+= aggressive 
+~ frustration += 2
+~ conscore -= 2
+Rumours spread around the world before truth gets on its shoes, so you easily manage to start spreading discord and misinformation about your competing bids. However, it's not long before people spot that you're clearly agitating on behalf of the one side you never mention... and <i>then</i> the backlash against the Lanark bid does far more damage to it than you have done to the others.
+    ->->
+
+
+
 
 = PLAN(sl)
 
