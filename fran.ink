@@ -54,7 +54,7 @@ INCLUDE 20xx.ink
 ~ experience = Skills.undeterminate
 ~ phase = none
 ~ threshold = 0
-~ energy = 10 
+~ energy = 5 //some starting energy, which you can increase with sleep
 ~ sleep_v = 0
 
 
@@ -68,6 +68,7 @@ A loud ringing sound permeates the perfect silence, penetrating into the comfort
  + [Ignore It and Try to Get to Sleep]
     ~ frustration += 1
     ~ sleep_v += 1
+    ~ energy += 1
     {sleep_v < 3: -> sleep | -> Ring_Off }
     
 = call
@@ -163,7 +164,8 @@ As for you, your connection with SF&F is:
  - xATCON: -> Epilogue
  - else: 
          ~ phase++
-         ~ threshold = 3*threshold
+         ~ threshold = 3*threshold //it's harder to fire a post the later it gets
+         ~ energy += 3 //replenish energy
          -> goto(S_5101, Scenarios) 
  }
 
@@ -217,7 +219,8 @@ Your friend on the Con contacts you to pass on the bad news: despite all the wor
 
 The Con is over, your score is: 
 
-SCORE
+//todo - three or so options here based on conscore range?
+{conscore}
 
 ~ dejavu += 1
 
