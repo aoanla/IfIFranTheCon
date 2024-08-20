@@ -34,6 +34,7 @@ INCLUDE 52xx.ink
 INCLUDE 59xx.ink
 INCLUDE 8xx.ink
 INCLUDE 20xx.ink
+INCLUDE 10xx.ink
 
 == PRELUDE
 
