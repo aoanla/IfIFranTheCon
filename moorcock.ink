@@ -8,12 +8,12 @@ in the multiverse of possibilites.
 Still, you do know that it has always been you, in all these 
 Perhaps it's because <i>only you could survive the call</i>, 
 
-You have been Cassandra, <more prophetesses>, but often your names have taken similar forms:
-F'ran F'ran'zees on Old Mars, <  > in decaying Granbretan, Frances Frasier in your most
+You have been Κασσάνδρα, Sambethe, Chilam Balam..., but often your names have taken similar forms:
+F'ran F'ran'zees on Old Mars, Fhran Fhrashir, Priestess of Bjrin Adass in decaying Granbretan, Frances Frasier in your most
 present memories. Often, you have been human - or human-like enough to pass as such - but
 you have senses of other forms, other places where your eternal task has taken more alien 
 forms and modalities.
-Always, though, your task has been the same: to broadcast the Great Message of the Gathering of Those Who 
+Always, though, your task has been the same. 
 
 There is a great weariness upon you as the full recollection of your task unfurls before you; you envy those countless emanations of you who are unaware of anything but their present predicament. Still, with that weariness comes also an answering great inner steel, an unquenchable drive to always 
 
