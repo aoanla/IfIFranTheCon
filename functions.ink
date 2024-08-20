@@ -8,7 +8,7 @@
 //should have the "Fran Fired" check here before we go elsewhere
 -> fran_fired -> 
 { LIST_COUNT(sl):
-    - 0: -> BEGIN.dispatch
+    - 0: -> TRAMPOLINE.dispatch
     - else: 
         ~ temp s = LIST_RANDOM(sl)
         -> goto(s,sl - s)

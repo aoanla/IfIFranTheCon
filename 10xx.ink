@@ -1,6 +1,7 @@
 
 == iirtc_1001(sl) ==
-// Progress Report management
+// The Gaming Room - 
+// - Fran's interaction here is counter-socials against the evil ~~H*sbr*~~ I mean Era Games.
 //TRAMPOLINE(sl)
 
 {phase:
@@ -15,7 +16,7 @@
 
 //There is no BID phase item for this one, so we *only* get the dejavu text here
 
-{dejavu > 2: You have a brief moment where you worry about how the Progress Reports will work, once we win the Bid. Then you decide you're getting ahead of yourself.}
+{dejavu > 2: You have a brief moment where you worry about what would happen if a big games company tried to buy the Con. Then you dismiss it as unlikely, who'd let something like that happen?}
 
 -> goto_l(sl)
 

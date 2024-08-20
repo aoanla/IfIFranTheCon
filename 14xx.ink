@@ -22,6 +22,8 @@
 
 = PLAN(sl)
  
+ //PLAN phase is just resolutions here, all the meat is in BID
+ 
  -> goto_l(sl)
  
 = ATCON(sl)

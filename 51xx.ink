@@ -71,7 +71,7 @@ This also means you're going to be even more busy handling all of the promotion 
  Apparently, the catering company the venue insist on - Luna Catering Company - have a signature moon pie with a green filling. WAMO - Writers Advocating {period == c2050s: against Musksphere Oppression|for Moon Occupation} - are concerned that Earth's primary satellite is being insulted by the scientific inaccuracy of this product, and are starting to make noise about it.
  At this point, no-one serious seems to have noticed the noise, but it might be worth warning the committee to take action before it gets worse.
  
- + Warn the Committee to release a statement
+ + [Warn the Committee to release a statement]
     //experience determines how well the statement goes
     -> PLANRES1 -> 
  + [Ignore the fuss, it's not going to catch on] You tell the committee that there's some weirdos called WAMO agitating, but that they can be safely ignored. At least this frees up more time for promotion!
@@ -88,6 +88,7 @@ Of course, this also means that you're handling a new and exciting set of questi
 
 //if we didn't notice the QuackFest issue, then it blows up here
 // LOGIC NOTE: I think i need to reset these visit counters if I am looping with dejavu... 
+
 { not SEENLOOP(->iirtc_5101.PLAN2): 
 <i>Fuck</i>, it looks like one of those things might be on <i>you</i>. Apparently you missed that some fringe org called WAMO have a weird beef with the Catering company the Con contracted with, and they've been formenting dissent in some obscure corner of {social_media(period)} for <i>months</i>.
 It looks like several panellists and high-profile authors are sympathetic to the cause and have dropped out at the last minute, and registrations are being cancelled.
@@ -168,11 +169,12 @@ Despite their decided unhappiness with this turn of events, the Committee would 
     - 1: Unfortunately, the calls for boycott from WAMO on {social_media(period)} have had more influence than you feared. Several high-profile authors joined the boycott, and took significant fen with them. The Con is still viable, but it's definitely wounded by this.
         ~ frustration += 4
         ~ conscore -= 2
-    - 2: -> B_COMMON ->->
-    - 3: -> B_COMMON ->->
+    - 2: -> B_COMMON -> 
+    - 3: -> B_COMMON ->
     - else: Luckily, the rating fire about Luna Catering on {social_media(period)} was limited entirely there. Anyone who was going to go to MetaCon seems to have been insufficiently interested in the debate to change their behaviour - attendance is as good as the Committee had planned for.
 }
-//I don't understand why this doesn't need a -> DONE as a thread...
+-> DONE
+
 
 = B_COMMON 
     The boycott calls from WAMO have been ignored by sensible people, but sadly not all con-goers are such people. Whilst attendance isn't significantly down, there is a bit of a negative feeling around the food trucks bringing the mood down overall.

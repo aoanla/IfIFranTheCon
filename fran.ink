@@ -81,15 +81,15 @@ Giving up your attempt to ignore the distraction, you <>
 
 - (callpoint)
 
-+ {dejavu} { not callcnt } \ <>{dejavu == 1: have a strange feeling you've been here before, but... | somehow know this is about MetaCon, and... }
++ {dejavu} { not callcnt } \ <i>{dejavu == 1: have a strange feeling you've been here before, but... | somehow know this is about MetaCon, and... }</i>
     ~ dejavu += 1
     ~ callcnt += 1
     -> callpoint 
-+ lean over and pick up the receiver from the telephone on the sideboard
++ <i>lean over and pick up the receiver from the telephone on the sideboard</i>
    ~ period = c1990s
-+ grab your cellphone from the sideboard, and thumb "accept"
++ <i>grab your cellphone from the sideboard, and thumb "accept"</i>
    ~ period = c2020s
-+ <>open a NeuroWeb port to the incoming request
++ <i>open a NeuroWeb port to the incoming request</i>
    ~ period = c2050s
 
 -
@@ -146,6 +146,9 @@ As for you, your connection with SF&F is:
  "... and our opponents. 
  "Can you try to create some buzz for us to maximise our visibility?"
 
+-> TRAMPOLINE
+
+== TRAMPOLINE
  ~ phase = xBID
  ~ threshold += 3
  
@@ -155,7 +158,7 @@ As for you, your connection with SF&F is:
  ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - S_5101 - Scenarios)
  ~ Scenarios +=  LIST_RANDOM(LIST_ALL(Scenarios) - S_5101 - Scenarios)
  
- {Scenarios}
+ //{Scenarios}
   
  -> goto(S_5101, Scenarios) 
  
