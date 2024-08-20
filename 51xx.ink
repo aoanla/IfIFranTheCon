@@ -20,15 +20,22 @@ A few hours later, you've familarised yourself with the info on MetaCon {WC(peri
 
 Do you:
 
-+ { energy > 1 } Focus on building your bid's presence, going the extra mile and diverting effort from your other projects.
+//NB: it seems likely that Experience and Fandom should influence
+// the outcomes of these choices (super experienced Fran might 
+// have a successful option 3, for example)
+
++ { energy > 1 } [Focus on building your bid's presence, going the extra mile and diverting effort from your other projects.]
     ~ frustration -= 2
     ~ energy -= 2
     ~ conscore += 2
-+ Put in a token effort to build reputation, but keep your powder dry for if the bid is successful
+    Putting in all this work is pretty tiring on top of all your other responsibilities, but it definitely shows results - soon everyone is talking about the Lanark bid for MetaCon.
++ [Put in a token effort to build reputation, but keep your powder dry for if the bid is successful]
     ~ frustration += 1
-+ Focus on destroying those serious competitors - no-one bests Fran Frasier!
+    You manage to keep the bid visible with relatively little work - and as a bonus, you don't have to prioritise this over anything else you're doing. However, the Committee seem a bit disappointed by the results.
++ [Focus on destroying those serious competitors - no-one bests Fran Frasier!]
     ~ frustration += 2
     ~ conscore -= 2
+    Rumours spread around the world before truth gets on its shoes, so you easily manage to start spreading discord and misinformation about your competing bids. However, it's not long before people spot that you're clearly agitating on behalf of the one side you never mention... and <i>then</i> the backlash against the Lanark bid does far more damage to it than you have done to the others.
 //Potential for choice 3 to divert to "kicked off" end choice, influenced by frustration
 
 - 

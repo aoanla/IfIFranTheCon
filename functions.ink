@@ -142,6 +142,6 @@
     {p:
     - TimePeriod.undeterminate: something eldritch #TODO
     - c1990s: alt.space.moon.colony
-    - c2020s: \#GreenMoon
+    - c2020s: the \#GreenMoon hashtag
     - c2050s: \#\#MuskWorldLiberation
     }
