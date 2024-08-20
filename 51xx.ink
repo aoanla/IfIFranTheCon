@@ -46,6 +46,12 @@ Do you:
 -> goto_l(sl)
 
 = PLAN(sl)
+
+* [TIME PASSES]
+-
+
+<center><u>The Bid Succeeds!</u>
+
 //5104 
 
 It's a success: your bid has succeeded in being Selected to host MetaCon {WC(period)}!
@@ -82,6 +88,11 @@ This also means you're going to be even more busy handling all of the promotion 
  -> goto_l(sl)
  
 = ATCON(sl)
+
+* [TIME PASSES]
+-
+
+<center><u>The Con Arrives</u>
 
 Well, you finally made it here - the venue is moved into, Hucksters are setting up their stalls, Programmes are printed and Registration is just about to open.
 Of course, this also means that you're handling a new and exciting set of questions about every tiny thing that the Committee didn't think of in advance...
