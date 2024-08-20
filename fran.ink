@@ -92,7 +92,7 @@ Giving up your attempt to ignore the distraction, you <>
 -
 
 The {voice(period)} on the end of the line is {frustration > 1: excited| frustrated}.
-"Fran," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up! {dejavu > 1:"}
+"{fran(period)}," it begins, "I'm glad you {frustration > 0: finally} answered, there's a fantastic opportunity coming up! {dejavu > 1:"}
 
     + {dejavu > 1}  «This is about MetaCon, isn't it?»
         -> dejavu_track -> cont
@@ -134,7 +134,7 @@ As for you, your connection with SF&F is:
   
  - 
  
- "Fran, <>{experience: 
+ "{fran(period)}, <>{experience: 
  - weak: I know you don't think you're up for this, but think of this as a trial of fire
  - average: I'm glad you said yes - and hopefully it'll be good for your CV too!
  - extensive: I know, I know we're lucky to have you, seriously :p 
@@ -230,7 +230,7 @@ The Con is over, your score is:
 
 == refused_the_call ==
 
-"Oh, sorry, Fran. I thought this would be a good thing for you, but if you're not interested, I'm sure the committee can manage by itself."
+"Oh, sorry, {fran(period)}. I thought this would be a good thing for you, but if you're not interested, I'm sure the committee can manage by itself."
 The voice hangs up.
 
 + [Time Passes] 

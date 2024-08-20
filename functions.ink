@@ -25,6 +25,7 @@
 }
     
 
+
 //I don't need this yet
 == function dejaRAND(l) ==
 //where l is a list of 7 items (1-6 for die, plus 7 for dejavu
@@ -39,6 +40,22 @@
 ~ return TURNS_SINCE(-> BEGIN) > TURNS_SINCE(knot)
 
 
+
+== function fran(p) ==
+{ p:
+- TimePeriod.undeterminate: Fr'n
+    - c1990s: Fran
+    - c2020s: Fran
+    - c2050s: FR4N
+    }
+
+== function franfrasier(p) ==
+{ p:
+- TimePeriod.undeterminate: Fr'n Fr'zz'r
+    - c1990s: Fran Frasier
+    - c2020s: Fran Frasier
+    - c2050s: FR4N-F745137
+}
 
 == function WC(p) ==
     { p:  
