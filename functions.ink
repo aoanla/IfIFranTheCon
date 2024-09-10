@@ -183,3 +183,29 @@
     - c2020s: the \#GreenMoon hashtag
     - c2050s: \#\#MuskWorldLiberation
     }
+    
+    
+== function tabletop(p) ==
+    {p:
+    - TimePeriod.undeterminate: card #TODO
+    - c1990s: tabletop
+    - c2020s: tabletop
+    - c2050s: VR
+    }
+
+== function ccg(p) ==
+    {p:
+    - TimePeriod.undeterminate: kenning challenge #TODO
+    - c1990s: tabletop tactics game
+    - c2020s: collectable card game
+    - c2050s: hyper-net battler
+    }
+    
+    
+== function ccgprize(p) ==
+    {p:
+    - TimePeriod.undeterminate: a hundred mortal souls #TODO
+    - c1990s: £10k
+    - c2020s: £100k
+    - c2050s: €1m
+    }
