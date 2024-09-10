@@ -1,9 +1,15 @@
 
+
+//a trigger test for if Fran is fired
 == fran_fired ==
 {frustration > threshold: ->-> FIRED}
 ->->
 
 
+
+//this and goto implement the core trampoline/dispatch system 
+//to allow "scenario knots" to fire sequentially [along with the trampolines in each scenario
+// which should probably be constructed as an included thread for each]
 == goto_l(sl)
 //should have the "Fran Fired" check here before we go elsewhere
 -> fran_fired -> 
@@ -35,12 +41,15 @@
     }
     ~ return dieroll
     
+    
+//"have we seen this knot on this iteration of the loop"
+// - replaces just testing {knot} if we want the option to be available in future loops but only once per loop
 == function SEENLOOP(knot)
 
 ~ return TURNS_SINCE(-> BEGIN) > TURNS_SINCE(knot)
 
 
-
+//Fran's name
 == function fran(p) ==
 { p:
 - TimePeriod.undeterminate: Fr'n
@@ -49,6 +58,7 @@
     - c2050s: FR4N
     }
 
+//Fran's full name
 == function franfrasier(p) ==
 { p:
 - TimePeriod.undeterminate: Fr'n Fr'zz'r
@@ -57,6 +67,8 @@
     - c2050s: FR4N-F745137
 }
 
+
+//the MetaCon version
 == function WC(p) ==
     { p:  
     - TimePeriod.undeterminate: 0
@@ -64,7 +76,8 @@
     - c2020s: 82
     - c2050s: 111
     }
-    
+
+//how does the average person get instant communication    
 == function phonecall(p) == 
 { p:
     - TimePeriod.undeterminate: astral sending
@@ -73,6 +86,7 @@
     - c2050s: sim-stream
 }
 
+//a laughable "rights" org for people with privilege already
 == function mensrights(p) == 
 { p:
     - TimePeriod.undeterminate: elf justice
@@ -80,7 +94,8 @@
     - c2020s: mens' rights
     - c2050s: physical sapients
 }    
-    
+
+//a touchstone for someone vaguely interested in SF&F    
 == function weak_SF(p) ==
     {p: 
     - TimePeriod.undeterminate: a strange blank #TODO
@@ -88,6 +103,8 @@
     - c2020s: you saw some of the Marvel movies
     - c2050s: you simmed a movie about a world with frozen water at the poles once
     }
+    
+//a touchstone for someone averagely SF&F fannish    
     == function average_SF(p) ==
     {p: 
     - TimePeriod.undeterminate: eldritch cubehedrons
@@ -96,6 +113,7 @@
     - c2050s: Doctor Who
     }
 
+//a touchstone for someone deeply SF&Fish
 == function obsessive_SF(p) ==
     {p: 
     - TimePeriod.undeterminate: floople in the dread dimensions
@@ -104,14 +122,16 @@
     - c2050s: episode in the complete run of One Piece
     }
 
+//the format of the communication via phonecall
 == function voice(p) ==
     {p: 
     - TimePeriod.undeterminate: emanation
     - c1990s: voice 
-    - c2020s: voice
+    - c2020s: text
     - c2050s: impression-stream
     }
-    
+
+//    
 == function speak(p) ==
     {p: 
     - TimePeriod.undeterminate: mind-speak
@@ -119,7 +139,8 @@
     - c2020s: talk
     - c2050s: link
     }
-    
+
+//what is the electronic medium for social interaction    
 == function social_media(p) ==
     {p:
     - TimePeriod.undeterminate: palantir
