@@ -48,7 +48,7 @@ Do you:
 
 - (choices)
 //allow *both* positive options here if you have enough energy
-+ {not SEENLOOP(choice_loop)} [Say Nothing]You decide that the last thing this needs is the legitimacy of an official response. //need to note if we also said nothing in 51xx
++ {not SEENLOOP(choice_loop)} [Say Nothing]You decide that the last thing this needs is the legitimacy of an official response. //TODO: need to note if we also said nothing in 51xx
     //if you choose to do nothing, you don't get to also do something
     -> nothing -> 
 + {not SEENLOOP(attack) && energy > 0 } [Attack the Rumour Mongers Directly]x
@@ -66,6 +66,10 @@ Do you:
 
 = choice_loop
 ->->
+
+//TODO: attack, address options need to be nuanced to also respond to the other having been selected
+//      before this one. (Some options may not be available, and some text may change.)
+
 
 //IIRTC choices are 33% "address" route [you have to talk about stats]
 //                  50% resolves issue [it dies off]
