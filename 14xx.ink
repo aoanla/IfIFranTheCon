@@ -3,7 +3,7 @@
 // Crime on the Streets
 // dealing partly with negative social media from another bid!
 
-LIST 14xx_conditions = 14UNDEF, 14Raging, 14Dead, 14DeadCost
+LIST 14xx_conditions = 14UNDEF = 0, 14Raging, 14Dead, 14DeadCost
 VAR 14xx_state = 14UNDEF
 //TRAMPOLINE(sl)
 
@@ -72,7 +72,7 @@ Do you:
 //                  16% works in your favour [makes attackers look bad] but with financial cost in PLAN (1409 PLAN)
 // for us, "making attacker look bad" needs the attacker to be obvious (so it depends on experience)
 = nothing 
-~ temp val = RANDOM(0,5) + LIST_VALUE(experience)
+~ temp val = RANDOM(-1,4) + LIST_VALUE(experience)
 { 
  - val < 3:
     Despite your valiant efforts to ignore the issue and hope it dies down, the "safety problem" takes on a life of its own. Fans are now spontaneously bringing up concerns in every conversation about the bid, so you're going to have to actually talk about it.
@@ -94,7 +94,7 @@ Do you:
 //                  33% leads to address
 // we should also have a special secret high-experience "goes well" option here
 = attack 
-~ temp val = RANDOM(0,5) + LIST_VALUE(experience)
+~ temp val = RANDOM(-1,4) + LIST_VALUE(experience)
 {
     - val < 5:
         //bad

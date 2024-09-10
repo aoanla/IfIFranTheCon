@@ -5,8 +5,8 @@
 // In particular, I think 16xx is quite applicable...
 
 LIST Numbers = one, two, three, four, five
-LIST TimePeriod = undeterminate, c1990s, c2020s, c2050s
-LIST Skills = undeterminate, weak, average, extensive
+LIST TimePeriod = undeterminate = 1 , c1990s, c2020s, c2050s
+LIST Skills = undeterminate = 1 , weak, average, extensive
 LIST Scenarios = S_5101, S_5201, S_5901, S_801, S_2001
 LIST Phase = none, xBID, xPLAN, xATCON
 VAR period = TimePeriod.undeterminate
