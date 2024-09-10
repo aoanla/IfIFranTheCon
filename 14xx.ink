@@ -42,18 +42,32 @@ It's up to you to sort this out.
 
 Do you:
 
-
+- (choices)
 //allow *both* positive options here if you have enough energy
-* [Say Nothing]You decide that the last thing this needs is the legitimacy of an official response. //need to note if we also said nothing in 51xx
-    Blah
-* [Attack the Rumour Mongers Directly]x
++ {not SEENLOOP(choice_loop)} [Say Nothing]You decide that the last thing this needs is the legitimacy of an official response. //need to note if we also said nothing in 51xx
+    -> choice_loop -> choices
++ {not SEENLOOP(attack) && energy > 0 } [Attack the Rumour Mongers Directly]x
     ~ energy -= 1 
-* [Address the Content of the Rumours]y
+    -> attack -> choice_loop -> choices
++ {not SEENLOOP(address) && energy > 0 } [Address the Content of the Rumours]y
     ~ energy -= 1 
+    -> address -> choice_loop -> choices
++ [Move On] 
+     
     
 -
 
 -> goto_l(sl)
+
+= choice_loop
+->->
+
+= attack 
+->->
+
+= address
+->->
+
 
 = PLAN(sl)
  
