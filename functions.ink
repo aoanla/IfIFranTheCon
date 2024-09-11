@@ -127,7 +127,7 @@
     {p: 
     - TimePeriod.undeterminate: emanation
     - c1990s: voice 
-    - c2020s: text
+    - c2020s: tone
     - c2050s: impression-stream
     }
 
